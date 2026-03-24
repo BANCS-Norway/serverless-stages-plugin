@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Question or discussion
+    url: https://github.com/BANCS-Norway/serverless-stages-plugin/discussions
+    about: Ask questions and discuss the plugin here rather than opening an issue.

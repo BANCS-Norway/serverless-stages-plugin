@@ -1,0 +1,95 @@
+{
+  "name": "@bancs/serverless-stages-plugin",
+  "version": "1.0.0",
+  "description": "Serverless plugin that restricts deployments to a configured list of stages.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p src",
+    "watch": "tsc -p src -w",
+    "test": "c8 mocha",
+    "lint": "eslint src test && markdownlint-cli2 '**/*.md' '#node_modules'",
+    "lint:fix": "eslint src test --fix && markdownlint-cli2 --fix '**/*.md' '#node_modules'",
+    "prepare": "husky"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BANCS-Norway/serverless-stages-plugin.git"
+  },
+  "keywords": [
+    "serverless-plugin",
+    "serverless",
+    "stages",
+    "deployment"
+  ],
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "author": "BANCS Norway",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BANCS-Norway/serverless-stages-plugin/issues"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "homepage": "https://github.com/BANCS-Norway/serverless-stages-plugin#readme",
+  "peerDependencies": {
+    "serverless": ">=3"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^20.4.2",
+    "@commitlint/config-conventional": "^20.4.2",
+    "@eslint/js": "^10.0.1",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^13.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^12.0.6",
+    "@semantic-release/npm": "^13.1.4",
+    "@semantic-release/release-notes-generator": "^14.1.0",
+    "@types/chai": "^5.2.3",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^22.0.0",
+    "@types/serverless": "^3.12.28",
+    "c8": "^11.0.0",
+    "chai": "^6.2.2",
+    "eslint": "^10.0.2",
+    "husky": "^9.0.0",
+    "lint-staged": "^15.0.0",
+    "markdownlint-cli2": "^0.22.0",
+    "mocha": "^11.0.0",
+    "semantic-release": "^25.0.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.0.0"
+  },
+  "lint-staged": {
+    "*.ts": "eslint",
+    "*.md": "markdownlint-cli2"
+  },
+  "c8": {
+    "include": [
+      "src/"
+    ],
+    "exclude": [
+      "**/*.d.ts"
+    ],
+    "reporter": [
+      "html",
+      "lcov",
+      "text"
+    ],
+    "all": true
+  }
+}
