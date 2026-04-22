@@ -71,7 +71,7 @@
     "mocha": "^11.0.0",
     "semantic-release": "^25.0.3",
     "ts-node": "^10.9.2",
-    "typescript": "^5.9.3",
+    "typescript": "^6.0.3",
     "typescript-eslint": "^8.0.0"
   },
   "lint-staged": {
